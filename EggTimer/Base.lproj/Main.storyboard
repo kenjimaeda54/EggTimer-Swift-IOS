@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -49,6 +50,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="101" height="218.66666666666666"/>
                                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
                                                         <state key="normal" title="Soft"/>
+                                                        <connections>
+                                                            <action selector="handleKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ynX-zD-DVW"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -72,6 +76,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="101" height="218.66666666666666"/>
                                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
                                                         <state key="normal" title="Medium"/>
+                                                        <connections>
+                                                            <action selector="handleKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EPR-LU-rjx"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -95,6 +102,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="101" height="218.66666666666666"/>
                                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
                                                         <state key="normal" title="Hard"/>
+                                                        <connections>
+                                                            <action selector="handleKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oug-Pq-kHR"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -112,6 +122,21 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJN-th-c5K" userLabel="Timer View">
                                         <rect key="frame" x="0.0" y="515.33333333333337" width="343" height="218.66666666666663"/>
+                                        <subviews>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="uTE-zl-CxU">
+                                                <rect key="frame" x="0.0" y="107" width="343" height="6"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="5" id="Rkq-MA-nW2"/>
+                                                </constraints>
+                                                <color key="progressTintColor" systemColor="systemYellowColor"/>
+                                                <color key="trackTintColor" systemColor="opaqueSeparatorColor"/>
+                                            </progressView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="uTE-zl-CxU" secondAttribute="trailing" id="3FQ-Em-326"/>
+                                            <constraint firstItem="uTE-zl-CxU" firstAttribute="leading" secondItem="nJN-th-c5K" secondAttribute="leading" id="PB6-yD-vig"/>
+                                            <constraint firstItem="uTE-zl-CxU" firstAttribute="centerY" secondItem="nJN-th-c5K" secondAttribute="centerY" id="bjE-bA-rZk"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -125,15 +150,25 @@
                             <constraint firstAttribute="trailingMargin" secondItem="wI6-ag-afn" secondAttribute="trailing" id="dky-ZA-Z3J"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="progressView" destination="uTE-zl-CxU" id="knl-v1-Wmg"/>
+                        <outlet property="titleLabel" destination="XLm-5r-pSP" id="q5D-9U-C8U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+            <point key="canvasLocation" x="136.80000000000001" y="137.4384236453202"/>
         </scene>
     </scenes>
     <resources>
         <image name="hard_egg" width="287.66665649414062" height="366.33334350585938"/>
         <image name="medium_egg" width="288" height="363.33334350585938"/>
         <image name="soft_egg" width="287" height="365.33334350585938"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
